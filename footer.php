@@ -71,7 +71,7 @@
                       <h3 class="footer-widget-header">Address</h3>
                  
                       <ul>
-					  <li class="text-white" style="text-align:left">info@unitedtechsoft</li>
+					  <li class="text-white" style="text-align:left">info@unitedtechsoft.com</li>
                         <li class="text-white" style="text-align:left">H NO 7-100/19,PLOT NO-19,NEAR WATER TANK BALAJI COLONY, NIZAMPET HYDERABAD Rangareddi TG</li>
                         
                         

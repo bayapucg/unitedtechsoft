@@ -1,4 +1,45 @@
+
+
+ <?php 
+	 if(isset($_POST['submit']) && $_POST['submit']=!''){ 
+   // echo "<pre>";print_r($_POST);exit;
+         $to = "info@unitedtechsoft.com";
+         $subject = "Contact request";
+         $message = 'Name:'.$_POST['name'].'<br> Email:'.$_POST['email'].'<br> Mobile :'.$_POST['mobile'].'<br> Subject :'.$_POST['subject'].'<br> Message :'.$_POST['message'];
+		$headers = "From:'".$_POST['email']."' \r\n";
+         $headers .= "MIME-Version: 1.0\r\n";
+         $headers .= "Content-type: text/html\r\n";
+			if(mail($to, $subject, $message, $headers)){
+			echo 'Your request successfully sent.';
+			header("Location:contanctus.php?success=1");
+			}else{
+			echo  'Technical problem will be occured. please try again.';
+			header("Location:contanctus.php?success=2");
+			}
+		
+			$conn->close();
+			}
+		
+
+?>
+ 
+
+
+
+
+
+
+
+
+
+
+
 <?php include("header.php"); ?>
+ <?php if(isset($_GET['success']) && $_GET['success']==1){ ?>
+	   <script>alert('Your request successfully sent');</script>
+	   <?php }else if(isset($_GET['success'])&& $_GET['success']==2){?>
+	   <script>alert('Technical problem will be occured. please try again');</script>
+	   <?php }?>
  <div class="header-space"></div>
        <div id="main">
           <!-- Contact Section Start Here -->
@@ -18,7 +59,7 @@
               <div class="row">
 			  <div class="form col-md-6  wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="10">
                 
-				 <form  class="form-horizontal" action="#" method="post">
+				 <form  class="form-horizontal" action="contanctus.php" method="post">
 
                    
 				   <div class="form-group">
